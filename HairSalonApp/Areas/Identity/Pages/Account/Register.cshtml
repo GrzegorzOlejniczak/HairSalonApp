@@ -4,10 +4,8 @@
     ViewData["Title"] = "Register";
 }
 
-<h1>Zarejestruj się</h1>
-
-<div class="row">
-    <div class="col-md-4">
+<div class="row bg-light rounded-4">
+    <div class="col-md-4 px-5 mt-5 pt-5">
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <h2>Utwórz nowe konto!</h2>
             <hr />
@@ -29,30 +27,46 @@
             </div>
             <div class="form-floating mb-3">
                 <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.Password">Password</label>
+                <label asp-for="Input.Password">Hasło</label>
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div class="form-floating mb-3">
                 <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
-                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                <label asp-for="Input.ConfirmPassword">Powtórz Hasło</label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
+            <button id="registerSubmit" type="submit" class="w-80 btn btn-lg btn-primary fs-5">Zarejestruj się</button>
+            <br /><br />
+            <p>
+                <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl">Masz już konto? <b>Zaloguj sie!</b></a>
+            </p>
 
-            @* <div class="form-floating mb-3">
-                <select asp-for="Input.Role" asp-items="@Model.Input.RoleList" class="form-select" aria-required="true" placeholder="password" >
-                    <option disabled selected>Selected Role</option>
-                </select>
-                <span asp-validation-for="Input.Role" class="text-danger"></span>
-            </div> *@
-
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
         </form>
     </div>
-    <div class="col-md-6 col-md-offset-2">
-        <section>
-            <h3>Witamy!</h3>
-           
-        </section>
+    <div class="col-md-1"></div>
+    <div class="col-md-6 mt-5 pb-5 ms-5">
+        <h3>Witamy na naszej stronie!</h3>
+        <hr />
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="~/images/blank_profile.png" class="d-block w-100 rounded-4" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/images/blank_profile.png" class="d-block w-100 rounded-4" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/images/blank_profile.png" class="d-block w-100 rounded-4" alt="...">
+                </div>
+            </div>
+
+        </div>
+
     </div>
 </div>
 
