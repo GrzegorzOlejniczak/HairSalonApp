@@ -1,0 +1,15 @@
+﻿@model HairSalonApp.Models.Appointment
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Nowa wizyta</h1>
+
+<hr />
+<partial name="_Calendar" />
+
+@section Scripts {
+    <script src="~/js/calendar.js"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
